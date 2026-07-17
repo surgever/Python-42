@@ -32,6 +32,6 @@ Specifically for this module, you should study all of these, it's a lot but it's
 ## Code example
 ```python
 def count_days_from_0_to_6() -> None:
-    while day in range(7):
-        print(f"Day: {day}")
+    for day in range(7):
+        print(f"Day: {day + 1}")
 ```
