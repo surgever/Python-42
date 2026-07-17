@@ -10,8 +10,8 @@ You will learn the fundamentals of Python programming through a series of exerci
 
 | Exercises | Contents |
 | ---------- |--------- |
-| [ex0](module-00/ex0/ft_hello_garden.py), [ex1](module-00/ex1/ft_garden_name.py), [ex2](module-00/ex2/ft_plot_area.py), [ex3](module-00/ex3/ft_harvest_total.py) | print(), input(), int()
-| [ex4](module-00/ex4/ft_plant_age.py), [ex5](module-00/ex5/ft_water_reminder.py), [ex6](module-00/ex6/ft_count_harvest_iterative.py), [ex7](module-00/ex7/ft_seed_inventory.py) | conditionals, loops, recursion
+| [ex0](ex0/ft_hello_garden.py), [ex1](ex1/ft_garden_name.py), [ex2](ex2/ft_plot_area.py), [ex3](ex3/ft_harvest_total.py) | print(), input(), int()
+| [ex4](ex4/ft_plant_age.py), [ex5](ex5/ft_water_reminder.py), [ex6](ex6/ft_count_harvest_iterative.py), [ex7](ex7/ft_seed_inventory.py) | conditionals, loops, recursion
 
 ## Learn:
 To start learning some basic Python I reccommend this course of 30 parts: 
