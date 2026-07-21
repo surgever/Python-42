@@ -45,7 +45,8 @@ class Plant:
                 f'{self.get_height()} cm, {self.get_age()} days old')
 
 
-def ft_garden_security() -> None:
+def main() -> None:
+    print('=== Garden Security System ===')
     plant = Plant("Rose", 15, 10)
     print(f'Plant created: {plant.show()}\n')
     plant.set_height(25)
@@ -57,5 +58,4 @@ def ft_garden_security() -> None:
 
 
 if __name__ == "__main__":
-    print('=== Garden Security System ===')
-    ft_garden_security()
+    main()

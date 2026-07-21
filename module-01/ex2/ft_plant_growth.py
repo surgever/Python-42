@@ -17,7 +17,8 @@ class Plant:
         self.days += days_added
 
 
-def ft_plant_growth() -> None:
+def main() -> None:
+    print("=== Garden Plant Growth ===")
     days_passed = 0
     plant1 = Plant()
     plant1.name = "Rose"
@@ -40,5 +41,4 @@ def ft_plant_growth() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Garden Plant Growth ===")
-    ft_plant_growth()
+    main()

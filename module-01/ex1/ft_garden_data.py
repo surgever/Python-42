@@ -10,7 +10,8 @@ class Plant:
         print(f'{self.name}: {self.height} cm, {self.age} days old')
 
 
-def ft_garden_data() -> None:
+def main() -> None:
+    print("=== Welcome to My Garden ===")
     plant1 = Plant()
     plant1.name = "Rose"
     plant1.height = 25
@@ -30,5 +31,4 @@ def ft_garden_data() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Welcome to My Garden ===")
-    ft_garden_data()
+    main()

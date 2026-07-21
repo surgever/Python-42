@@ -214,7 +214,8 @@ def ft_display_plant_statistics(plant: Plant) -> None:
     print(plant.get_stats())
 
 
-def ft_garden_analytics() -> None:
+def main() -> None:
+    print("=== Garden statistics ===")
     print("=== Check year-old")
     print(f"Is 30 days more than a year? -> {Plant.check_is_year_age(30)}")
     print(f"Is 400 days more than a year? -> {Plant.check_is_year_age(400)}")
@@ -251,5 +252,4 @@ def ft_garden_analytics() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Garden statistics ===")
-    ft_garden_analytics()
+    main()
