@@ -25,7 +25,7 @@ def water_error(water_amount: int) -> None:
         raise WaterError("Not enough water in the tank!")
 
 
-def test_errors() -> None:
+def main() -> None:
     print("=== Custom Garden Errors Demo ===")
 
     print("\nTesting PlantError...")
@@ -57,4 +57,4 @@ def test_errors() -> None:
 
 
 if __name__ == "__main__":
-    test_errors()
+    main()

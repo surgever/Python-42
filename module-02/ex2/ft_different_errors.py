@@ -13,7 +13,7 @@ def garden_operations(test: int) -> None:
         return
 
 
-def test_error_types() -> None:
+def main() -> None:
     print("=== Garden Error Types Demo ===")
     tests = [0, 1, 2, 3, 4]
     for error in tests:
@@ -34,4 +34,4 @@ def test_error_types() -> None:
 
 
 if __name__ == "__main__":
-    test_error_types()
+    main()

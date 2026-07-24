@@ -25,11 +25,12 @@ def test_watering_system(plant_list: list[str]) -> None:
     except PlantError as exc:
         print(f"Caught PlantError: {exc}")
         print(".. ending tests and returning to main")
+        return
     finally:
         print("Closing watering system")
 
 
-if __name__ == "__main__":
+def main() -> None:
     print("=== Garden Watering System ===")
     print("\nTesting valid plants...")
     plant_list_ok = ["Tomato", "Lettuce", "Carrots"]
@@ -38,3 +39,7 @@ if __name__ == "__main__":
     plant_list_bad = ["Tomato", "lettuce", "carrots"]
     test_watering_system(plant_list_bad)
     print("\nCleanup always happens, even with errors!")
+
+
+if __name__ == "__main__":
+    main()
