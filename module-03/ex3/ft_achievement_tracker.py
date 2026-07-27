@@ -8,7 +8,8 @@ def gen_player_achievements(achi: list[str]) -> set[str]:
     return set(random.sample(achi, count))
 
 
-def ft_achievement_tracker() -> None:
+def main() -> None:
+    print("=== Achievement Tracker System ===")
     achi = ['Crafting Genius', 'Strategist', 'World Savior',
             'Speed Runner', 'Survivor', 'Master Explorer',
             'Treasure Hunter', 'Unstoppable', 'First Steps',
@@ -40,5 +41,4 @@ def ft_achievement_tracker() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Achievement Tracker System ===")
-    ft_achievement_tracker()
+    main()

@@ -3,7 +3,8 @@
 import random
 
 
-def ft_data_alchemist() -> None:
+def main() -> None:
+    print("=== Game Data Alchemist ===")
     players = [
         "Alice",
         "bob",
@@ -36,5 +37,4 @@ def ft_data_alchemist() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Game Data Alchemist ===")
-    ft_data_alchemist()
+    main()

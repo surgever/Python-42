@@ -22,7 +22,8 @@ def consume_event(
         yield events.pop(index)
 
 
-def ft_data_stream() -> None:
+def main() -> None:
+    print("=== Game Data Stream Processor ===")
     generator = gen_event()
     for i in range(1000):
         player, action = next(generator)
@@ -37,5 +38,4 @@ def ft_data_stream() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Game Data Stream Processor ===")
-    ft_data_stream()
+    main()

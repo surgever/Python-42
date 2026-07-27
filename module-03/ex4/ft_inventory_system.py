@@ -7,13 +7,17 @@ class bcolors:
     WARNING = '\033[93m'
     ENDC = '\033[0m'
 
-def ft_inventory_system() -> None:
+
+def main() -> None:
+    print("=== Inventory System Analysis ===")
     inv = {}
     argc = len(sys.argv)
     if argc == 1:
-        print(bcolors.WARNING + "Error - Please provide inventory parameters." + bcolors.ENDC)
+        print(bcolors.WARNING +
+              "Error - Please provide inventory parameters." + bcolors.ENDC)
         print("Usage: python3 ft_inventory_system.py item_a:3 item_b:12")
         return
+
     for arg in sys.argv[1:]:
         colon_pos = -1
         for i in range(len(arg)):
@@ -40,30 +44,26 @@ def ft_inventory_system() -> None:
             print(f"Negative quantity error for '{key}': {quantity}")
             continue
         inv.update({key: quantity})
+
     print("Got inventory:", inv)
     print("Item list:", list(inv.keys()))
     total = sum(inv.values())
     print(f"Total quantity of the {len(inv)} items: {total}")
-    if len(inv) > 0:
-        if total > 0:
-            for key in inv:
-                percentage = round(inv[key] * 100 / total, 1)
-                print(f"Item {key} represents {percentage}%")
-        most_abundant = ""
-        least_abundant = ""
+
+    if len(inv) > 0 and total > 0:
+        most, least = "", ""
         for key in inv:
-            if most_abundant == "" or inv[key] > inv[most_abundant]:
-                most_abundant = key
-            if least_abundant == "" or inv[key] < inv[least_abundant]:
-                least_abundant = key
-        print(f"Item most abundant: {most_abundant}"
-              f" with quantity {inv[most_abundant]}")
-        print(f"Item least abundant: {least_abundant}"
-              f" with quantity {inv[least_abundant]}")
+            percentage = round(inv[key] * 100 / total, 1)
+            print(f"Item {key} represents {percentage}%")
+            if most == "" or inv[key] > inv[most]:
+                most = key
+            if least == "" or inv[key] < inv[least]:
+                least = key
+        print(f"Item most abundant: {most} with quantity {inv[most]}")
+        print(f"Item least abundant: {least} with quantity {inv[least]}")
     inv.update({"magic_item": 1})
     print("Updated inventory:", inv)
 
 
 if __name__ == "__main__":
-    print("=== Inventory System Analysis ===")
-    ft_inventory_system()
+    main()

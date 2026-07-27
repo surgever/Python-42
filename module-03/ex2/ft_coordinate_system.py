@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import math
-import sys
+
 
 def get_player_pos() -> tuple[float, float, float]:
     enter_coord = "Enter new coordinates as floats in format 'x,y,z': "
@@ -27,13 +27,16 @@ def get_player_pos() -> tuple[float, float, float]:
     return (x, y, z)
 
 
-def ft_coordinate_system() -> None:
+def main() -> None:
+    print("=== Game Coordinate System ===")
+
     print("\nGet a first set of coordinates")
     c1 = get_player_pos()
     print("Got a first tuple:", c1)
     print(f"It includes: X={c1[0]}, Y={c1[1]}, Z={c1[2]}")
     to_center = math.sqrt((c1[0])**2 + (c1[1])**2 + (c1[2])**2)
     print("Distance to center:", round(to_center, 4))
+
     print("\nGet a second set of coordinates")
     c2 = get_player_pos()
     print("Distance between the 2 sets of coordinates:", round(math.sqrt(
@@ -42,8 +45,7 @@ def ft_coordinate_system() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Game Coordinate System ===")
     try:
-        ft_coordinate_system()
+        main()
     except KeyboardInterrupt:
         print("\nProgram terminated by user.")

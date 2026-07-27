@@ -4,6 +4,7 @@ import sys
 
 
 def main() -> None:
+    print("=== Player Score Analytics ===")
     argc = len(sys.argv)
     scores = []
     if argc >= 1:
@@ -30,5 +31,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Player Score Analytics ===")
     main()
