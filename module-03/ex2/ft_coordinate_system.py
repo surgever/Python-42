@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import math
-
+import sys
 
 def get_player_pos() -> tuple[float, float, float]:
     enter_coord = "Enter new coordinates as floats in format 'x,y,z': "
@@ -43,4 +43,7 @@ def ft_coordinate_system() -> None:
 
 if __name__ == "__main__":
     print("=== Game Coordinate System ===")
-    ft_coordinate_system()
+    try:
+        ft_coordinate_system()
+    except KeyboardInterrupt:
+        print("\nProgram terminated by user.")

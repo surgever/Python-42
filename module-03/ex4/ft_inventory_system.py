@@ -4,23 +4,15 @@ import sys
 
 
 class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
     WARNING = '\033[93m'
-    FAIL = '\033[91m'
     ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
 
 def ft_inventory_system() -> None:
     inv = {}
     argc = len(sys.argv)
     if argc == 1:
-        print("Error - provide inventory parameters")
-        print(bcolors.OKGREEN + "Warning: empty. Continue?" + bcolors.ENDC)
+        print(bcolors.WARNING + "Error - Please provide inventory parameters." + bcolors.ENDC)
+        print("Usage: python3 ft_inventory_system.py item_a:3 item_b:12")
         return
     for arg in sys.argv[1:]:
         colon_pos = -1
