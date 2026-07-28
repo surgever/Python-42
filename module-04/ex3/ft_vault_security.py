@@ -1,7 +1,7 @@
-def secure_archive(filen: str, action: str = "r",
+def secure_archive(file_name: str, action: str = "r",
                    content: str = "") -> tuple[bool, str]:
     try:
-        with open(filen, action) as vault_file:
+        with open(file_name, action) as vault_file:
             if action == "r":
                 content: str = vault_file.read()
                 return (True, content)
