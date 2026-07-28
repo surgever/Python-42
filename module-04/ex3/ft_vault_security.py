@@ -1,12 +1,13 @@
+
 def secure_archive(file_name: str, action: str = "r",
-                   content: str = "") -> tuple[bool, str]:
+                   new_content: str = "") -> tuple[bool, str]:
     try:
         with open(file_name, action) as vault_file:
             if action == "r":
                 content: str = vault_file.read()
                 return (True, content)
             elif action == "w":
-                vault_file.write(content)
+                vault_file.write(new_content)
                 return (True, "Content successfully written to file")
             else:
                 return (False, "Function parameter error. Accepted: r or w.")
@@ -16,6 +17,7 @@ def secure_archive(file_name: str, action: str = "r",
 
 
 def main() -> None:
+    print("=== Cyber Archives Security ===")
     print("\nUsing 'secure_archive' to read from a nonexistent file:")
     print(secure_archive("this-file-does-not-exist.txt"))
     print("\nUsing 'secure_archive' to read from an inaccessible file:")
@@ -27,5 +29,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Cyber Archives Security ===")
     main()
