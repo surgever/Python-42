@@ -29,7 +29,7 @@ class JsonExport:
 
 class DataProcessor(ABC):
     def __init__(self) -> None:
-        self._data: list = []
+        self._data: list[Any] = []
         self._rank_counter: int = 0
 
     @abstractmethod
@@ -40,7 +40,7 @@ class DataProcessor(ABC):
     def ingest(self, data: Any) -> None:
         pass
 
-    def output(self) -> tuple[int, str]:
+    def output(self) -> Any:
         if len(self._data) == 0:
             raise Exception("No data left to output")
         return self._data.pop(0)
@@ -176,6 +176,7 @@ class DataStream:
 
 
 def main() -> None:
+    print("=== Code Nexus - Data Pipeline ===")
 
     print("\nInitialize Data Stream...")
     stream = DataStream()
@@ -259,5 +260,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Code Nexus - Data Pipeline ===")
     main()

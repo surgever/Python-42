@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 
 class DataProcessor(ABC):
     def __init__(self) -> None:
-        self._data: list = []
+        self._data: list[Any] = []
         self._rank_counter: int = 0
 
     @abstractmethod
@@ -17,7 +17,7 @@ class DataProcessor(ABC):
     def ingest(self, data: Any) -> None:
         pass
 
-    def output(self) -> tuple[int, str]:
+    def output(self) -> Any:
         if len(self._data) == 0:
             raise IndexError("No data left to output")
         return self._data.pop(0)
@@ -144,6 +144,8 @@ class DataStream:
 
 
 def main() -> None:
+    print("=== Code Nexus Data Stream ===\n")
+
     print("Initialize Data Stream...")
     stream = DataStream()
     print("== DataStream statistics ==")
@@ -152,7 +154,7 @@ def main() -> None:
     print("Registering Numeric Processor\n")
     n_processor = NumericProcessor()
     stream.register_processor(n_processor)
-    batch_1: list = [
+    batch_1: list[Any] = [
         'Hello world',
         [3.14, 1, 2.71],
         [{'log_level': 'WARNING', 'log_message':
@@ -188,5 +190,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Code Nexus Data Stream ===\n")
     main()

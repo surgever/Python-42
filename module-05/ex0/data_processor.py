@@ -110,7 +110,9 @@ class LogProcessor(DataProcessor):
                 self._rank_counter += 1
 
 
-def nexusDataProcessor() -> None:
+def main() -> None:
+    print("=== Code Nexus Data Processor ===")
+
     print("\nTesting Numeric Processor...")
     n_processor = NumericProcessor()
     print(f"Trying to validate input '42': {n_processor.validate(42)}")
@@ -154,5 +156,4 @@ def nexusDataProcessor() -> None:
 
 
 if __name__ == "__main__":
-    print("=== Code Nexus Data Processor ===")
-    nexusDataProcessor()
+    main()
