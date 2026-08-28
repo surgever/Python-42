@@ -1,4 +1,4 @@
-from .fabric import CreatureFactory, Creature
+from .abstracts import CreatureFactory, Creature
 from .creatures import AquaFactory, FlameFactory
 from .print import print_screen
 

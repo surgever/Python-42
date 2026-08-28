@@ -1,4 +1,4 @@
-from .fabric import Creature, CreatureFactory
+from .abstracts import Creature, CreatureFactory
 
 
 class Charmander(Creature):

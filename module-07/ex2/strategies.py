@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from ex0 import Creature, print_screen
-from ex1.ability import HealCapability, TransformCapability
+from ex1 import HealCapability, TransformCapability
 
 
 class StrategyError(Exception):

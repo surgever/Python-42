@@ -1,5 +1,5 @@
 from ex0 import CreatureFactory, Creature
-from .ability import HealCapability, TransformCapability
+from .abilities import HealCapability, TransformCapability
 
 
 class Bulbasaur(Creature, HealCapability):

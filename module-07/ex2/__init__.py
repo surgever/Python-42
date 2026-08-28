@@ -1,4 +1,4 @@
-from .strat import (
+from .strategies import (
     BattleStrategy,
     NormalStrategy,
     AggressiveStrategy,

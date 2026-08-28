@@ -1,7 +1,7 @@
 from ex0 import CreatureFactory, FlameFactory, AquaFactory, print_screen
 
 
-def test_factory(factory: CreatureFactory) -> None:
+def show_factory(factory: CreatureFactory) -> None:
     print_screen(None, None, "Opening creature factory...", ["Begin"])
     base = factory.create_base()
     print_screen(base, None, base.describe(), ["Attack"])
@@ -14,7 +14,7 @@ def test_factory(factory: CreatureFactory) -> None:
     print_screen(fevolved, None, fevolved.attack(), ["Battle!"])
 
 
-def test_battle(factory1: CreatureFactory, factory2: CreatureFactory) -> None:
+def show_battle(factory1: CreatureFactory, factory2: CreatureFactory) -> None:
     print_screen(None, None, "Now is time to let the battle begin!", ["Begin"])
     base1 = factory1.create_base()
     print_screen(base1, None, base1.describe(), ["Versus"])
@@ -29,8 +29,8 @@ if __name__ == "__main__":
     try:
         flame_factory = FlameFactory()
         aqua_factory = AquaFactory()
-        test_factory(flame_factory)
-        test_factory(aqua_factory)
-        test_battle(flame_factory, aqua_factory)
+        show_factory(flame_factory)
+        show_factory(aqua_factory)
+        show_battle(flame_factory, aqua_factory)
     except KeyboardInterrupt:
         print("\nProgram terminated by user.")

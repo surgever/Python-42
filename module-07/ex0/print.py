@@ -35,10 +35,10 @@ def print_msgbox(msg: str = "", opt: list[str] = []) -> None:
             msg2 += " " + w
     opt = (opt + [""] * 4)[:4]
     # 56 - 2 >> 54 = 30 + 24 >> | 1 msg 1 | 9 1 9 |
-    print(f"{p.blF}▐{p.yl}{'▀'*34}▛{'▀'*19}▜{p.reset}")
-    print(f"{p.blF}▐{p.yl}{msg1:<33} ▌{opt[0]:<9} {opt[1]:<9}▐{p.reset}")
-    print(f"{p.blF}▐{p.yl}{msg2:<33} ▌{opt[2]:<9} {opt[3]:<9}▐{p.reset}")
-    print(f"{p.blF}▐{p.yl}{'▄'*34}▙{'▄'*19}▟{p.reset}")
+    print(f"{p.blF}▐{p.yl}{'▀'*33}▜{'▀'*20}▜{p.reset}")
+    print(f"{p.blF}▐{p.yl}{msg1:<33}▐ {opt[0]:<9} {opt[1]:<9}▐{p.reset}")
+    print(f"{p.blF}▐{p.yl}{msg2:<33}▐ {opt[2]:<9} {opt[3]:<9}▐{p.reset}")
+    print(f"{p.blF}▐{p.yl}{'▄'*33}▟{'▄'*20}▟{p.reset}")
 
 
 def print_screen(

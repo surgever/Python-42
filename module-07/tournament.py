@@ -1,17 +1,12 @@
-from ex1 import HealingCreatureFactory, TransformCreatureFactory
 from ex0 import CreatureFactory, FlameFactory, AquaFactory, print_screen
-from ex2 import (
-    BattleStrategy,
-    NormalStrategy,
-    AggressiveStrategy,
-    DefensiveStrategy,
-    StrategyError
-)
+from ex1 import HealingCreatureFactory, TransformCreatureFactory
+from ex2 import (BattleStrategy, StrategyError, 
+    NormalStrategy, AggressiveStrategy, DefensiveStrategy)
 
 
 def battle(opponents: list[tuple[CreatureFactory, BattleStrategy]]) -> None:
     print_screen(None, None, "Tournament. "
-                 + f"{len(opponents)} opponents involved", ["Beggin"])
+                 + f"{len(opponents)} opponents involved", ["Begin"])
 
     for i in range(len(opponents)):
         for j in range(i + 1, len(opponents)):
@@ -32,41 +27,44 @@ def battle(opponents: list[tuple[CreatureFactory, BattleStrategy]]) -> None:
                 return
 
 
+def tournament() -> None:
+    flame_factory = FlameFactory()
+    aqua_factory = AquaFactory()
+    healing_factory = HealingCreatureFactory()
+    transform_factory = TransformCreatureFactory()
+
+    normal = NormalStrategy()
+    aggressive = AggressiveStrategy()
+    defensive = DefensiveStrategy()
+
+    print_screen(None, None, "Tournament 0 (basic)", ["Go"])
+    print_screen(None, None,
+        "Flame: Normal, Healing: Defensive", ["Go"])
+    battle([
+        (flame_factory, normal),
+        (healing_factory, defensive)
+    ])
+
+    print_screen(None, None, "Tournament 1 (error)", ["Go"])
+    print_screen(None, None,
+        "Flame: Aggressive, Healing: Defensive", ["Go"])
+    battle([
+        (flame_factory, aggressive),
+        (healing_factory, defensive)
+    ])
+
+    print_screen(None, None, "Tournament 2 (multiple)", ["Go"])
+    print_screen(None, None,
+        "Aqua: Normal, Healing: Defensive,"
+        + "Transform: Aggressive", ["Go"])
+    battle([
+        (aqua_factory, normal),
+        (healing_factory, defensive),
+        (transform_factory, aggressive)
+    ])
+
 if __name__ == "__main__":
     try:
-        flame_factory = FlameFactory()
-        aqua_factory = AquaFactory()
-        heal_factory = HealingCreatureFactory()
-        transform_factory = TransformCreatureFactory()
-    
-        normal_strat = NormalStrategy()
-        aggro_strat = AggressiveStrategy()
-        def_strat = DefensiveStrategy()
-    
-        print_screen(None, None, "Tournament 0 (basic)", ["Go"])
-        print_screen(None, None, "Flame: Normal, Healing: Defensive", ["Go"])
-        roster_basic: list[tuple[CreatureFactory, BattleStrategy]] = [
-            (flame_factory, normal_strat),
-            (heal_factory, def_strat)
-        ]
-        battle(roster_basic)
-    
-        print_screen(None, None, "Tournament 1 (error)", ["Go"])
-        print_screen(None, None, "Flame: Aggressive, Healing: Defensive", ["Go"])
-        roster_error: list[tuple[CreatureFactory, BattleStrategy]] = [
-            (flame_factory, aggro_strat),
-            (heal_factory, def_strat)
-        ]
-        battle(roster_error)
-    
-        print_screen(None, None, "Tournament 2 (multiple)", ["Go"])
-        print_screen(None, None, "Aqua: Normal, Healing: Defensive,"
-                     + "Transform: Aggressive", ["Go"])
-        roster_multiple: list[tuple[CreatureFactory, BattleStrategy]] = [
-            (aqua_factory, normal_strat),
-            (heal_factory, def_strat),
-            (transform_factory, aggro_strat)
-        ]
-        battle(roster_multiple)
+        tournament()
     except KeyboardInterrupt:
         print("\nProgram terminated by user.")

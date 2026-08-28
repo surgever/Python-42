@@ -1,10 +1,9 @@
-from ex1 import HealingCreatureFactory, TransformCreatureFactory
-from ex1.ability import HealCapability, TransformCapability
 from ex0 import CreatureFactory, print_screen
-from time import sleep
+from ex1 import HealingCreatureFactory, TransformCreatureFactory
+from ex1 import HealCapability, TransformCapability
 
 
-def test_1(factory: CreatureFactory) -> None:
+def healing_action(factory: CreatureFactory) -> None:
     print_screen(
         None, None,
         "Opening Creature with healing capability", ["Begin"])
@@ -27,7 +26,7 @@ def test_1(factory: CreatureFactory) -> None:
         print_screen(fevolved, None, fevolved.heal(), ["End"])
 
 
-def test_2(factory: CreatureFactory) -> None:
+def transform_action(factory: CreatureFactory) -> None:
     print_screen(
         None, None,
         "Opening Creature with transform capability", ["Begin"])
@@ -45,18 +44,6 @@ def test_2(factory: CreatureFactory) -> None:
     print_screen(evolved, None, evolved.describe(), ["Attack"])
     print_screen(evolved, None, evolved.attack(), ["Transform"])
     if isinstance(evolved, TransformCapability):
-        print_screen(evolved, None, evolved.transform(), ["Attack"], "f1", True)
-        sleep(0.5)
-        print_screen(evolved, None, evolved.transform(), ["Attack"], "f2", True)
-        sleep(0.5)
-        print_screen(evolved, None, evolved.transform(), ["Attack"], "f1", True)
-        sleep(0.5)
-        print_screen(evolved, None, evolved.transform(), ["Attack"], "f2", True)
-        sleep(0.5)
-        print_screen(evolved, None, evolved.transform(), ["Attack"], "f1", True)
-        sleep(0.5)
-        print_screen(evolved, None, evolved.transform(), ["Attack"], "f2", True)
-        sleep(0.5)
         print_screen(evolved, None, evolved.transform(), ["Attack", "Switch", "Evolve", "Exit"])
 
     print_screen(evolved, None, evolved.attack(), ["Revert"])
@@ -66,9 +53,7 @@ def test_2(factory: CreatureFactory) -> None:
 
 if __name__ == "__main__":
     try:
-        healers_factory = HealingCreatureFactory()
-        trans_factory = TransformCreatureFactory()
-        test_1(healers_factory)
-        test_2(trans_factory)
+        healing_action(HealingCreatureFactory())
+        transform_action(TransformCreatureFactory())
     except KeyboardInterrupt:
         print("\nProgram terminated by user.")
