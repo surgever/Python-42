@@ -2,6 +2,7 @@ _This project has been created as part of the 42 curriculum by seoliver._
 
 # Module 07 🐾 Abstract Card Architecture
 
+<img src="battle.png" style="float:right; margin-left: 5px">
 **Master Python’s design patterns with abstract classes and interfaces.**
 
 Here you will learn how to model systems with abstract classes, inheritance, and strategy-driven behavior. This module focuses on factory patterns, interfaces, and combat logic built around flexible creature and battle designs.
