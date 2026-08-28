@@ -44,16 +44,24 @@ def transform_action(factory: CreatureFactory) -> None:
     print_screen(evolved, None, evolved.describe(), ["Attack"])
     print_screen(evolved, None, evolved.attack(), ["Transform"])
     if isinstance(evolved, TransformCapability):
-        print_screen(evolved, None, evolved.transform(), ["Attack", "Switch", "Evolve", "Exit"])
+        print_screen(
+            evolved, None, evolved.transform(),
+            ["Attack", "Switch", "Evolve", "Exit"])
 
     print_screen(evolved, None, evolved.attack(), ["Revert"])
     if isinstance(evolved, TransformCapability):
         print_screen(evolved, None, evolved.revert(), ["End"])
 
 
+def main() -> None:
+    healing_factory = HealingCreatureFactory()
+    transform_factory = TransformCreatureFactory()
+    healing_action(healing_factory)
+    transform_action(transform_factory)
+
+
 if __name__ == "__main__":
     try:
-        healing_action(HealingCreatureFactory())
-        transform_action(TransformCreatureFactory())
+        main()
     except KeyboardInterrupt:
         print("\nProgram terminated by user.")

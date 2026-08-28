@@ -25,12 +25,16 @@ def show_battle(factory1: CreatureFactory, factory2: CreatureFactory) -> None:
     print_screen(base1, base2, base2.attack(), ["Exit"])
 
 
+def main() -> None:
+    flame_factory = FlameFactory()
+    aqua_factory = AquaFactory()
+    show_factory(flame_factory)
+    show_factory(aqua_factory)
+    show_battle(flame_factory, aqua_factory)
+
+
 if __name__ == "__main__":
     try:
-        flame_factory = FlameFactory()
-        aqua_factory = AquaFactory()
-        show_factory(flame_factory)
-        show_factory(aqua_factory)
-        show_battle(flame_factory, aqua_factory)
+        main()
     except KeyboardInterrupt:
         print("\nProgram terminated by user.")

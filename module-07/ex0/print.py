@@ -45,7 +45,7 @@ def print_screen(
         pok1: Creature | None, pok2: Creature | None,
         msg: str, opt: list[str] = [],
         fg: str = "f1", noinput: bool = False) -> None:
-    
+
     print("\033[H\033[J", end="")
     if pok1:
         try:
