@@ -3,7 +3,7 @@ from os import path
 from site import getsitepackages
 
 
-def virtual_environment_info() -> None:
+def main() -> None:
 
     if base_prefix != prefix:
 
@@ -35,4 +35,4 @@ def virtual_environment_info() -> None:
 
 
 if __name__ == "__main__":
-    virtual_environment_info()
+    main()

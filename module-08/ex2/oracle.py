@@ -3,7 +3,7 @@ import sys
 from typing import Dict, Optional
 
 try:
-    from dotenv import load_dotenv  # type: ignore
+    from dotenv import load_dotenv
 except ImportError:
     print(
         "Error: 'python-dotenv' package is not installed.\n"
@@ -57,7 +57,16 @@ def get_security(config: Dict[str, Optional[str]]) -> Dict[str, str]:
     }
 
 
-def oracle(config: Dict[str, Optional[str]]) -> None:
+def main() -> None:
+    print("\nORACLE STATUS: Reading the Matrix...\n")
+    try:
+        config: Dict[str, Optional[str]] = get_config()
+    except Exception as error:
+        print(
+            f"Error accessing Mainframe configuration: {error}",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     mode = config.get("MATRIX_MODE") or "development"
     db_url = config.get("DATABASE_URL")
@@ -100,12 +109,4 @@ def oracle(config: Dict[str, Optional[str]]) -> None:
 
 
 if __name__ == "__main__":
-    print("\nORACLE STATUS: Reading the Matrix...\n")
-    try:
-        oracle(get_config())
-    except Exception as error:
-        print(
-            f"Error accessing Mainframe configuration: {error}",
-            file=sys.stderr,
-        )
-        sys.exit(1)
+    main()
