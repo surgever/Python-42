@@ -36,7 +36,9 @@ def test_station(station_data: Any) -> None:
         print()
 
 
-def validate_stations() -> None:
+def main() -> None:
+    print("Space Station Data Validation")
+
     stations_data = [
         {
             "station_id": "ISS001",
@@ -62,5 +64,4 @@ def validate_stations() -> None:
 
 
 if __name__ == "__main__":
-    print("Space Station Data Validation")
-    validate_stations()
+    main()

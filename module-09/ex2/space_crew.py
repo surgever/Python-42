@@ -90,7 +90,8 @@ def test_mission(mission_data: Any) -> None:
         print()
 
 
-def manage_crew_for_missions() -> None:
+def main() -> None:
+    print("Space Mission Crew Validation")
 
     commander = CrewMember(
         member_id="C001",
@@ -149,5 +150,4 @@ def manage_crew_for_missions() -> None:
 
 
 if __name__ == "__main__":
-    print("Space Mission Crew Validation")
-    manage_crew_for_missions()
+    main()

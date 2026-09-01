@@ -52,7 +52,6 @@ class AlienContact(BaseModel):
 
 
 def test_alien_contact(contact_data: Any) -> None:
-
     try:
         contact = AlienContact(**contact_data)
     except ValidationError as exc:
@@ -71,7 +70,9 @@ def test_alien_contact(contact_data: Any) -> None:
         print()
 
 
-def verify_alien_contacts() -> None:
+def main() -> None:
+    print("Alien Contact Log Validation")
+
     contacts_data = [
         {
             "contact_id": "AC_2024_001",
@@ -103,5 +104,4 @@ def verify_alien_contacts() -> None:
 
 
 if __name__ == "__main__":
-    print("Alien Contact Log Validation")
-    verify_alien_contacts()
+    main()

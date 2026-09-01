@@ -10,11 +10,15 @@ Here you will learn how to validate data with Pydantic models and enforce rules 
 
 | Exercises | Contents |
 | ---------- |--------- |
-| [ex0](ex0/space_station.py), [ex1](ex1/alien_contact.py), [ex2](ex2/space_crew.py) | Pydantic, BaseModel, Field, validation rules
+| [ex0](ex0/space_station.py) | Pydantic, BaseModel, Field
+| [ex1](ex1/alien_contact.py) | @model_validator
+| [ex2](ex2/space_crew.py) | Nested validation
 
 ## Learn:
-* [Pydantic Validation Documentation](https://pydantic.dev/docs/validation/latest/get-started/)
-
+* [Pydantic Documentation:](https://pydantic.dev/docs/validation/latest/get-started/)
+  * [BaseModel](https://pydantic.dev/docs/validation/latest/api/pydantic/base_model/)
+  * [Field()](https://pydantic.dev/docs/validation/latest/concepts/fields/)
+  * [@model_validator](https://pydantic.dev/docs/validation/latest/concepts/validators/)
 ## Notes
 - Have you explored Pydantic at depth and understood why it saves some much time when parsing? 
 
