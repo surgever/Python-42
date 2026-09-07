@@ -27,7 +27,7 @@ Here you will learn how functional programming techniques can make your code mor
 * [Decorators](https://www.geeksforgeeks.org/python/decorators-in-python/)
 
 ## Notes
-- Have you included and are you using add and mul from the operator module?
+- Have you imported from the operator module `add` and `mul` and are you using them in the reducer?
 
 ## Code example
 

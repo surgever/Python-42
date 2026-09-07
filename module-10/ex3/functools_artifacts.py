@@ -22,7 +22,8 @@ def basic_enchantment(power: int, element: str, target: str) -> str:
     return f"{target} was hit by a {element} attack of power {power}."
 
 
-def partial_enchanter(base_enchantment: Callable) -> dict[str, Callable]:
+def partial_enchanter(
+        base_enchantment: Callable[..., Any]) -> dict[str, Callable[..., Any]]:
     return {
         'fire': partial(base_enchantment, power=50, element='fire'),
         'ice': partial(base_enchantment, power=50, element='ice'),
@@ -58,7 +59,7 @@ def spell_dispatcher() -> Callable[[Any], str]:
     return dispatch
 
 
-if __name__ == "__main__":
+def main() -> None:
 
     print("\nTesting spell reducer...")
     spell_powers = [20, 40, 30, 10]
@@ -87,3 +88,7 @@ if __name__ == "__main__":
     print("Enchantment:", dispatcher("fireball"))
     print("Multi-cast:", dispatcher(spell_powers))
     print(dispatcher(partial))
+
+
+if __name__ == "__main__":
+    main()

@@ -13,7 +13,7 @@ def mage_counter() -> Callable[[], int]:
     return add_mage
 
 
-def spell_accumulator(initial_power: int) -> Callable:
+def spell_accumulator(initial_power: int) -> Callable[[int], int]:
     power = initial_power
 
     def add_power(increase: int) -> int:
@@ -24,7 +24,7 @@ def spell_accumulator(initial_power: int) -> Callable:
     return add_power
 
 
-def enchantment_factory(enchantment_type: str) -> Callable:
+def enchantment_factory(enchantment_type: str) -> Callable[[str], str]:
     desc = enchantment_type
 
     def apply_enchantment(item: str) -> str:
@@ -35,15 +35,15 @@ def enchantment_factory(enchantment_type: str) -> Callable:
     return apply_enchantment
 
 
-def memory_vault() -> dict[str, Callable]:
+def memory_vault() -> dict[str, Any]:
 
-    vault: dict[str, Any] = {}
+    vault: dict[str, str] = {}
 
-    def store(key: str, value: Any) -> str:
+    def store(key: str, value: str) -> str:
         vault[key] = value
         return value
 
-    def recall(key: str) -> str:
+    def recall(key: str, _: str = "") -> str:
         try:
             return vault[key]
         except KeyError:
@@ -55,7 +55,7 @@ def memory_vault() -> dict[str, Callable]:
     }
 
 
-if __name__ == "__main__":
+def main() -> None:
 
     print("\nTesting mage counter...")
     fire_mages = mage_counter()
@@ -80,3 +80,7 @@ if __name__ == "__main__":
     print("Store 'secret' =", memo["store"]("secret", "42"))
     print("Recall 'secret':", memo["recall"]("secret"))
     print("Recall 'unknown':", memo["recall"]("unknown"))
+
+
+if __name__ == "__main__":
+    main()

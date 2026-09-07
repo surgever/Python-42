@@ -2,17 +2,12 @@ from functools import wraps
 from collections.abc import Callable
 import re
 import time
-
-# Master's Tower Test Data
-test_powers = [15, 29, 22, 29]
-spell_names = ['earthquake', 'heal', 'flash', 'lightning']
-mage_names = ['Rowan', 'Alex', 'Ash', 'Kai', 'Morgan', 'Nova']
-invalid_names = ['Jo', 'A', 'Alex123', 'Test@Name']
+from typing import Any
 
 
-def spell_timer(func: Callable) -> Callable:
+def spell_timer(func: Callable[..., Any]) -> Callable[..., Any]:
     @wraps(func)
-    def wrapper(*args, **kwargs) -> str:
+    def wrapper(*args: Any, **kwargs: Any) -> Any:
 
         print("Casting", func.__name__)
         start_time = time.time()
@@ -23,12 +18,13 @@ def spell_timer(func: Callable) -> Callable:
     return wrapper
 
 
-def power_validator(min_power: int) -> Callable[[Callable], Callable]:
+def power_validator(
+        min_power: int) -> Callable[[Callable[..., Any]], Callable[..., Any]]:
     '''A decorator factory takes arguments
     and has the decorator function inside'''
-    def decorator(func: Callable) -> Callable:
+    def decorator(func: Callable[..., Any]) -> Callable[..., Any]:
         @wraps(func)
-        def wrapper(*args, **kwargs) -> str:
+        def wrapper(*args: Any, **kwargs: Any) -> Any:
 
             if isinstance(args[0], int):
                 power = args[0]
@@ -41,10 +37,10 @@ def power_validator(min_power: int) -> Callable[[Callable], Callable]:
     return decorator
 
 
-def retry_spell(max_attempts: int):
-    def decorator(func: Callable) -> Callable:
+def retry_spell(max_attempts: int) -> Callable[..., Any]:
+    def decorator(func: Callable[..., Any]) -> Callable[..., Any]:
         @wraps(func)
-        def wrapper(*args, **kwargs) -> str:
+        def wrapper(*args: Any, **kwargs: Any) -> Any:
             for i in range(max_attempts):
                 try:
                     return func(*args, **kwargs)
@@ -87,14 +83,15 @@ def attack(power: int, move: str) -> str:
 
 
 @retry_spell(3)
-def burn(type: str) -> str:
-    if type == "fire":
+def burn(element: str) -> str:
+    if element == "fire":
         return "Foe burned with real fire"
     else:
         raise TypeError("Burn couldn't be performed!")
 
 
-if __name__ == "__main__":
+def main() -> None:
+
     print("Testing spell timer...")
     print(add_a_lot(50000))
 
@@ -113,3 +110,7 @@ if __name__ == "__main__":
     print(guild.validate_mage_name("Paco23"))
     print(guild.cast_spell("Fireball", 25))
     print(guild.cast_spell("Fireball", 9))
+
+
+if __name__ == "__main__":
+    main()
