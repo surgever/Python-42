@@ -1,7 +1,7 @@
 _This project has been created as part of the 42 curriculum by seoliver._
 
 # Python Exercises
-<h2 style="border: 0 none; font-style: italic; opacity: 0.6; ">10 Modules - 42 School Curriculum </h2>
+### *10 Modules - 42 School Curriculum*
 
 
 This project contains a series of exercises that I have done that were designed to teach Python programming through a project-based methodology. This repo includes 10 modules that build upon each other, progressing to the goal of learning object-oriented programming and functional programming.
@@ -10,7 +10,7 @@ Inside of each modules a readme contain links to resources to learn what is used
 
 ## Index
 
-<img src="module-07/battle.png" style="float:right; margin-left: 5px; max-width: 350px">
+<img src="module-07/battle.png" align="right">
 
 00. [Python Fundamentals](module-00)  🌱
 01. [Classes, Object-Oriented Systems](module-01) 🌳
