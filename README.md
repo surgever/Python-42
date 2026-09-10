@@ -4,22 +4,22 @@ _This project has been created as part of the 42 curriculum by seoliver._
 ### *10 Modules - 42 School Curriculum*
 
 
-This project contains a series of exercises that I have done that were designed to teach Python programming through a project-based methodology. This repo includes 10 modules that build upon each other, progressing to the goal of learning object-oriented programming and functional programming.
+This project contains a series of exercises that I have done to learn the Python programming language through an autonomous and project-based methodology. This repository includes 10 modules that build upon each other, progressing to the goal of learning object-oriented programming and functional programming.
 
-Inside of each modules a readme contain links to resources to learn what is used in the exercises. There are also important notes to keep in mind when doing the exercises.
+Inside of each module a readme file contain links to resources to learn the concepts used in the exercises. There are also notes with important checks to take into account after doing the exercises.
 
 ## Index
 
-<img src="module-07/battle.png" align="right">
+[<img src="module-07/battle.png" align="right">](module-07)
 
 00. [Python Fundamentals](module-00)  🌱
-01. [Classes, Object-Oriented Systems](module-01) 🌳
+01. [Classes, Object-Oriented Prog.](module-01) 🌳
 02. [Errors, Exceptions and Data Engineering](module-02) 💦
 03. [Python Collections](module-03) 🎮
 04. [Read, Write Digital Archives](module-04) 📖
 05. [Polymorphic Data Streams](module-05) 🧬
 06. [Import Packages and Modules](module-06) ⚗️
-07. [Creatures Abstract Architecture (img→)](module-07) 🐾
+07. [Creatures Abstract Architecture](module-07) 🐾 →
 08. [Virtual Environments](module-08) 📊
 09. [Pydantic Models & Validation](module-09) 🚀
 10. [Functional Programming](module-10) 🪄
@@ -27,7 +27,7 @@ Inside of each modules a readme contain links to resources to learn what is used
 ## Module contents
 
 | Module | Exercises | Contents |
-| :----: | :-------: | -------- |
+| :----: | --------: | -------- |
 | [00](module-00) | [ex0](module-00/ex0/ft_hello_garden.py), [ex1](module-00/ex1/ft_garden_name.py), [ex2](module-00/ex2/ft_plot_area.py), [ex3](module-00/ex3/ft_harvest_total.py) | print(), input(), int()
 |    | [ex4](module-00/ex4/ft_plant_age.py), [ex5](module-00/ex5/ft_water_reminder.py), [ex6](module-00/ex6/ft_count_harvest_iterative.py), [ex7](module-00/ex7/ft_seed_inventory.py) | conditionals, loops, recursion
 | [01](module-01) | [ex0](module-01/ex0/ft_garden_intro.py), [ex1](module-01/ex1/ft_garden_data.py), [ex2](module-01/ex2/ft_plant_growth.py), [ex3](module-01/ex3/ft_plant_factory.py), [ex4](module-01/ex4/ft_garden_security.py) | classes, methods, attributes
