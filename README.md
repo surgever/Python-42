@@ -16,17 +16,17 @@ Inside of each module a readme file contain links to resources to learn the conc
 01. [Classes, Object-Oriented Prog.](module-01) 🌳
 02. [Errors, Exceptions and Data Engineering](module-02) 💦
 03. [Python Collections](module-03) 🎮
-04. [Read, Write Digital Archives](module-04) 📖
+04. [Read, Write Digital Files](module-04) 📖
 05. [Polymorphic Data Streams](module-05) 🧬
 06. [Import Packages and Modules](module-06) ⚗️
-07. [Creatures Abstract Architecture](module-07) 🐾 →
+07. [Creatures Abstract Architecture](module-07) 🐾
 08. [Virtual Environments](module-08) 📊
 09. [Pydantic Models & Validation](module-09) 🚀
 10. [Functional Programming](module-10) 🪄
 
 ## Module contents
 
-| Module | Exercises | Contents |
+| M. | Exercises | Contents |
 | :----: | --------: | -------- |
 | [00](module-00) | [ex0](module-00/ex0/ft_hello_garden.py), [ex1](module-00/ex1/ft_garden_name.py), [ex2](module-00/ex2/ft_plot_area.py), [ex3](module-00/ex3/ft_harvest_total.py) | print(), input(), int()
 |    | [ex4](module-00/ex4/ft_plant_age.py), [ex5](module-00/ex5/ft_water_reminder.py), [ex6](module-00/ex6/ft_count_harvest_iterative.py), [ex7](module-00/ex7/ft_seed_inventory.py) | conditionals, loops, recursion
@@ -37,7 +37,7 @@ Inside of each module a readme file contain links to resources to learn the conc
 | [03](module-03) | [ex0](module-03/ex0/ft_command_quest.py) | arguments, data parsing
 |    | [ex1](module-03/ex1/ft_score_analytics.py), [ex2](module-03/ex2/ft_coordinate_system.py), [ex3](module-03/ex3/ft_achievement_tracker.py), [ex4](module-03/ex4/ft_inventory_system.py) | list, tuple, set, dict
 |    | [ex5](module-03/ex5/ft_data_stream.py) | generator, yield
-|    | [ex6](module-03/ex6/ft_data_alchemist.py) | comprehensions
+|    | [ex6](module-03/ex6/ft_data_alchemist.py) | comprehension
 | [04](module-04) | [ex0](module-04/ex0/ft_ancient_text.py), [ex1](module-04/ex1/ft_archive_creation.py), [ex2](module-04/ex2/ft_stream_management.py) | file open, read, write
 |    | [ex3](module-04/ex3/ft_vault_security.py) | with, secure file handling
 | [05](module-05) | [ex0](module-05/ex0/data_processor.py), [ex1](module-05/ex1/data_stream.py), [ex2](module-05/ex2/data_pipeline.py) | polymorphism, abstract classes, method overriding
@@ -55,3 +55,23 @@ Inside of each module a readme file contain links to resources to learn the conc
 |    | [ex3](module-10/ex3/functools_artifacts.py) | functools: reduce, partial, lru_cache, singledispatch
 |    | [ex4](module-10/ex4/decorator_mastery.py) | decorator, decorator factories, functools.wraps
 
+## Flake8 / Mypy
+All these exercises comply with **flake8** and **mypy strict**. Flake8 is a linter tool that reports styling and coding issues. Mypy checks that type annotations are used when they are needed. Comply with flake8 and mypy is mandatory for 42 code. Comply with mypy strict is recommended. To use them, install the two modules entering this command:
+```
+python3 -m pip install flake8 mypy
+```
+
+To run them in your currect directory, enter:
+```
+python3 -m flake8
+python3 -m mypy --strict .
+```
+
+I reccomend adding alias (shortcuts) to run both faster. To do so, enter the command: `vim ~/.zshrc` and at the end of the file, add:
+```
+alias flake8='python3 -m flake8'
+alias mypy='python3 -m mypy'
+alias flmy='python3 -m flake8 . && python3 -m mypy --strict .'
+```
+
+With these alias, after restarting the terminal, you only need to enter `flake8` or `mypy --strict .` to run them. Or even easier, enter `flmy` to run both, one after the other.
